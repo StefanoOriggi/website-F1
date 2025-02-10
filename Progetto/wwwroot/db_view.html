@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="db_style.css">
+    <script src="db_script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gestore Password</h1>
+            <div class="search-container">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Cerca..." id="search">
+            </div>
+        </div>
+        <table id="passwordTable">
+            <tbody>
+                <tr>
+                    <td>Facebook</td>
+                    <td>utente123</td>
+                    <td>password1</td>
+                </tr>
+                <tr>
+                    <td>Gmail</td>
+                    <td>email@example.com</td>
+                    <td>password2</td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td>user_twitter</td>
+                    <td>password3</td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td>user_instagram</td>
+                    <td>password4</td>
+                </tr>
+                <tr>
+                    <td>LinkedIn</td>
+                    <td>user_linkedin</td>
+                    <td>password5</td>
+                </tr>
+                <tr>
+                    <td>Reddit</td>
+                    <td>user_reddit</td>
+                    <td>password6</td>
+                </tr>
+                <tr>
+                    <td>Amazon</td>
+                    <td>user_amazon</td>
+                    <td>password7</td>
+                </tr>
+                <tr>
+                    <td>Netflix</td>
+                    <td>user_netflix</td>
+                    <td>password8</td>
+                </tr>
+                <tr>
+                    <td>Spotify</td>
+                    <td>user_spotify</td>
+                    <td>password9</td>
+                </tr>
+                <tr>
+                    <td>WhatsApp</td>
+                    <td>user_whatsapp</td>
+                    <td>password10</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-container">
+            <button class="btn" onclick="showAddPasswordPopup()">Aggiungi Password</button>
+            <button class="btn" onclick="TogglePasswords()">Mostra/Nascondi Password</button>
+            <button class="btn" onclick="showDeletePasswordPopup()">Elimina Password</button>
+        </div>
+    </div>
+
+    <div id="addPasswordPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeAddPasswordPopup()">&times;</span>
+            <h2>Aggiungi Nuova Password</h2>
+            <label for="site">Nome del sito:</label>
+            <input type="text" id="site" name="site">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password">
+            <button class="btn" onclick="AddPassword()">Aggiungi</button>
+        </div>
+    </div>
+
+    <div id="deletePasswordPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeDeletePasswordPopup()">&times;</span>
+            <h2>Elimina Password</h2>
+            <label for="deleteSite">Nome del sito:</label>
+            <input type="text" id="deleteSite" name="deleteSite">
+            <button class="btn" onclick="DeletePassword()">Elimina</button>
+        </div>
+    </div>
+</body>
+</html>
