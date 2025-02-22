@@ -1,3 +1,12 @@
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('Il sito è stato caricato');
+document.addEventListener("DOMContentLoaded", function () {
+    const teams = document.querySelectorAll(".team");
+    const name = document.getElementsByTagName("li").innerText;
+    teams.forEach(team => {
+        team.addEventListener("click", function () {
+            const url = this.getAttribute("data-url"); // Legge l'URL dal data attribute
+            if (url) {
+                window.location.href = url; // Reindirizza alla pagina corrispondente
+            }
+        });
+    });
 });
