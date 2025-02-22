@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Il sito è stato caricato!');
+    console.log('Il sito è stato caricato');
 });
