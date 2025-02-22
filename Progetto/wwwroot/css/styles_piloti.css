@@ -1,0 +1,91 @@
+   .navbar {
+       position: fixed;
+       width: 100%;
+       top: 0;
+       z-index: 10;
+       background-color: #C70000;
+       padding: 1rem 0;
+
+   }
+
+   /* Stile navbar */
+   .navbar-brand img {
+       height: auto;
+   }
+
+   .navbar-nav .nav-link {
+       color: white;
+       margin: 0 15px;
+       font-weight: bold;
+       transition: color 0.3s;
+   }
+
+   .navbar-nav .nav-link:hover {
+       color: #FFC107;
+   }
+
+   footer {
+       position: relative;
+       width: 100%;
+       background-color: #15151E;
+       padding: 1rem 0;
+       z-index: 10;
+   }
+
+   .container {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       padding: 20px;
+   }
+
+   .team {
+       background-color: #fff;
+       margin: 10px;
+       padding: 20px;
+       border-radius: 10px;
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+       width: 200px;
+       text-align: center;
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+   .team:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   }
+
+   .team img {
+       width: 100%;
+       transition: transform 0.3s ease;
+   }
+
+   .team:hover img {
+       transform: scale(1.05);
+   }
+
+   .team img {
+       width: 100%;
+   }
+
+   .team h3 {
+       margin: 10px 0;
+   }
+
+   .team ul {
+       list-style-type: none;
+       padding: 0;
+   }
+
+   .team li {
+       margin: 5px 0;
+   }
+
+   .flag-img {
+       width: 10px;
+       height: 10px;
+   }
+
+   li img {
+       width: 15px;
+   }
