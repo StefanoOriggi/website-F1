@@ -1,14 +1,16 @@
 body {
-    font: -apple-system, BlinkMacSystemFont;
-    background-color: #F6F4F0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
+    overflow-y: auto;
 }
+
 .container {
     background: white;
     max-width: 1200px;
@@ -19,6 +21,7 @@ body {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .player-info {
@@ -31,8 +34,9 @@ body {
 .player-photo {
     flex: 1;
     display: flex;
-    align-items: stretch;
-    /* Estende l'immagine all'altezza del contenitore */
+    align-items: flex-start;
+    height: calc(100vh - 400px);
+    /* Altezza fissa basata sulla viewport */
 }
 
 .player-photo img {
@@ -40,6 +44,7 @@ body {
     height: 100%;
     /* Occupa tutta l'altezza del contenitore */
     object-fit: cover;
+    /* Mantiene le proporzioni senza distorsioni */
     border-radius: 8px;
 }
 
@@ -84,18 +89,19 @@ body {
 }
 
 @media (max-width: 768px) {
-    .carousel img {
-        height: 200px;
-    }
-}
-@media (max-width: 768px) {
     .player-info {
         flex-direction: column;
     }
 
+    .player-photo {
+        height: auto;
+        /* Altezza automatica su dispositivi mobili */
+    }
+
     .player-photo img {
         width: 100%;
-        height: auto;
+        height: 300px;
+        /* Altezza fissa su dispositivi mobili */
     }
 
     .carousel img {
