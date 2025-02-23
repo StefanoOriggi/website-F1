@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     const pilotDivs = document.querySelectorAll('.team');
-
     pilotDivs.forEach(div => {
         div.addEventListener('click', function () {
             const playerId = this.id;
@@ -15,16 +14,13 @@ function redirectToPlayerPage(playerId) {
     window.location.href = 'piloti-click.html';
 }
 
-// Funzione per caricare i dati del pilota nella nuova pagina
 async function fetchPlayerData() {
-    // Recupera l'URL dell'API dal localStorage
     const apiUrl = localStorage.getItem('playerApiUrl');
-
+    
     if (!apiUrl) {
         document.getElementById('player-data').innerHTML = "<p>Nessun dato trovato.</p>";
         return;
     }
-
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
@@ -34,17 +30,37 @@ async function fetchPlayerData() {
 
             const playerHtml = `
                 <h2>${player.strPlayer}</h2>
-                <p>Nazionalità: ${player.strNationality}</p>
-                <p>Squadra: ${player.strTeam}</p>
-                <p>Sport: ${player.strSport}</p>
-                <p>Descrizione: ${player.strDescriptionEN}</p>
-                <img src="${player.strThumb}" alt="${player.strPlayer}" style="width: 200px;">
+
+                <p style="font-weight: bold;">Team</p
+                <p id="squadra">${player.strTeam}</p>
+
+                <p style="font-weight: bold;">Birth place</p
+                <p id="nazione">${player.strNationality}</p>
+                
+                <p style="font-weight: bold;">Description</p>
+                <p id="desc">${player.strDescriptionEN}</p>
             `;
 
+            document.getElementById('render').src = player.strRender;
+            document.getElementById('fanart2').src = player.strFanart2;
+            document.getElementById('fanart3').src = player.strFanart3;
+            document.getElementById('fanart4').src = player.strFanart4;
             document.getElementById('player-data').innerHTML = playerHtml;
-        } else {
-            document.getElementById('player-data').innerHTML = "<p>Nessun dato trovato per questo pilota.</p>";
+
+            let currentIndex = 0;
+            const carouselInner = document.querySelector('.carousel-inner');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const totalItems = carouselItems.length;
+
+            function showNextItem() {
+                const offset = -currentIndex * 100;
+                carouselInner.style.transform = `translateX(${offset}%)`;
+                currentIndex = (currentIndex + 1) % totalItems;
+            }
+            setInterval(showNextItem, 3500);
         }
+        else
+            document.getElementById('player-data').innerHTML = "<p>Nessun dato trovato per questo pilota.</p>";
     } catch (error) {
         console.error("Errore durante il recupero dei dati:", error);
         document.getElementById('player-data').innerHTML = "<p>Si è verificato un errore durante il recupero dei dati.</p>";

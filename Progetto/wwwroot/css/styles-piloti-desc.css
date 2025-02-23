@@ -1,0 +1,104 @@
+body {
+    font: -apple-system, BlinkMacSystemFont;
+    background-color: #F6F4F0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    background: white;
+    max-width: 1200px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.player-photo {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    /* Estende l'immagine all'altezza del contenitore */
+}
+
+.player-photo img {
+    width: 300px;
+    height: 100%;
+    /* Occupa tutta l'altezza del contenitore */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.player-details {
+    flex: 2;
+}
+
+.player-details h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.player-details p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .carousel img {
+        height: 200px;
+    }
+}
+@media (max-width: 768px) {
+    .player-info {
+        flex-direction: column;
+    }
+
+    .player-photo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .carousel img {
+        height: 200px;
+    }
+}
