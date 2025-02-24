@@ -1,0 +1,118 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F6F4F0;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: #C70000;
+    padding: 1rem 0;
+}
+
+.navbar-brand img {
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFC107;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background-color: #15151E;
+    padding: 1rem 0;
+    z-index: 10;
+}
+
+.teams-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.team {
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 20px);
+    /* 2 div per riga */
+    text-align: left;
+    /* Allinea tutto il contenuto a sinistra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-header {
+    display: flex;
+    justify-content: space-between;
+    /* Allinea il nome a sinistra e il logo a destra */
+    align-items: center;
+    /* Centra verticalmente */
+    margin-bottom: 10px;
+}
+
+.team-name {
+    margin: 0;
+    /* Rimuovi il margine predefinito */
+    font-size: 1.2em;
+    /* Aumenta leggermente la dimensione del font */
+    font-weight: bold;
+    /* Rendi il nome più evidente */
+}
+
+.team-logo {
+    width: 30px;
+    height: auto;
+}
+
+.team-car {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.team-drivers {
+    margin: 10px 0;
+    font-size: 0.9em;
+    display: flex;
+    /* Usa Flexbox per dividere il contenuto */
+    justify-content: space-between;
+    /* Distribuisce lo spazio tra gli elementi */
+    align-items: center;
+    /* Centra verticalmente */
+}
+
+.driver-name {
+    flex: 1;
+    /* Ogni nome occupa metà dello spazio disponibile */
+    text-align: center;
+    /* Allinea il testo al centro della sua area */
+}
+
+.driver-separator {
+    flex: 0;
+    /* La barra non si espande */
+    padding: 0 10px;
+    /* Aggiunge spazio attorno alla barra */
+}
+.team-drivers span {
+    display: inline-block;
+    /* Garantisce che i nomi siano sulla stessa linea */
+}

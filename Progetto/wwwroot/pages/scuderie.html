@@ -4,47 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classifiche Formula 1</title>
+    <title>Scuderie Formula 1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    <script defer src="../js/script.js"></script>
+    <link rel="stylesheet" href="../css/styles_teams.css">
+    <script defer src="../js/script-fetch-team.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<style>
-    .navbar {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 10;
-        background-color: #C70000;
-        padding: 1rem 0;
-
-    }
-
-    /* Stile navbar */
-    .navbar-brand img {
-        height: auto;
-    }
-
-    .navbar-nav .nav-link {
-        color: white;
-        margin: 0 15px;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
-
-    .navbar-nav .nav-link:hover {
-        color: #FFC107;
-    }
-
-    footer {
-        position: relative;
-        width: 100%;
-        background-color: #15151E;
-        padding: 1rem 0;
-        z-index: 10;
-    }
-</style>
 
 <body>
     <div class="wrapper">
@@ -59,16 +25,165 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="../pages/piloti.html">Piloti</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/scuderie.html">Scuderie</a></li>
                         <li class="nav-item"><a class="nav-link" href="../pages/cerca.html">Cerca</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
+        <main class="container my-5">
+            <div class="teams-container">
+                <div class="team" data-url="teams-click.html" id="red_bull">
+                    <div class="team-header">
+                        <h3 class="team-name">Red Bull</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/red-bull-racing-logo.png"
+                            alt="Red Bull Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Max Verstappen</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Liam Lawson</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/red-bull-racing.png"
+                        alt="Red Bull Car" class="team-car">
+                </div>
 
-        <main class="container my-5 ">
-            <h1 class="text-center mb-4">Scuderie Formula 1</h1>
+                <div class="team" data-url="teams-click.html" id="ferrari">
+                    <div class="team-header">
+                        <h3 class="team-name">Ferrari</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/ferrari-logo.png"
+                            alt="Ferrari Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Charles Leclerc</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Lewis Hamilton</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/ferrari.png"
+                        alt="Ferrari Car" class="team-car">
+                </div>
+
+                <div class="team" data-url="teams-click.html" id="mclaren">
+                    <div class="team-header">
+                        <h3 class="team-name">Mclaren</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/mclaren-logo.png"
+                            alt="Mclaren Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Lando Norris</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Oscar Piastri</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/mclaren.png"
+                        alt="McLaren Car" class="team-car">
+                </div>
+
+                <div class="team" data-url="teams-click.html" id="mercedes">
+                    <div class="team-header">
+                        <h3 class="team-name">Mercedes</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/mercedes-logo.png"
+                            alt="mercedes Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">George Russell</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Andrea Kimi Antonelli</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/mercedes.png"
+                        alt="Mercedes Car" class="team-car">
+                </div>
+
+                <div class="team" data-url="teams-click.html" id="aston_martin">
+                    <div class="team-header">
+                        <h3 class="team-name">Aston Martin</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/aston-martin-logo.png"
+                            alt="mercedes Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Fernando Alonso</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Lance Stroll</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/aston-martin.png"
+                        alt="Aston Martin Car" class="team-car">
+                </div>
+
+                <div class="team" data-url="teams-click.html" id="alpine">
+                    <div class="team-header">
+                        <h3 class="team-name">Alpine</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/alpine-logo.png"
+                            alt="mercedes Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Pierre Gasly</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Jack Doohan</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/alpine.png"
+                        alt="Alpine Car" class="team-car">
+                </div>
+
+                <div class="team" data-url="teams-click.html" id="haas">
+                    <div class="team-header">
+                        <h3 class="team-name">Haas</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/haas-logo.png"
+                            alt="haas Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Esteban Ocon</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Oliver Bearman</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/haas.png"
+                        alt="Haas Car" class="team-car">
+                </div>
+
+                <div class="team" data-url="teams-click.html" id="williams">
+                    <div class="team-header">
+                        <h3 class="team-name">Williams</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/williams-logo.png"
+                            alt="williams Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Alexander Albon</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Carlos Sainz</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/williams.png"
+                        alt="williams Car" class="team-car">
+                </div>
+
+                <div class="team" data-url="teams-click.html" id="kick_sauber">
+                    <div class="team-header">
+                        <h3 class="team-name">Kick Sauber</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/kick-sauber-logo.png"
+                            alt="kick-sauber Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Nico Hulkenberg</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Gabriel Bortoleto</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/kick-sauber.png"
+                        alt="kick-sauber Car" class="team-car">
+                </div>
+
+                <div class="team" data-url="teams-click.html" id="racing_bulls">
+                    <div class="team-header">
+                        <h3 class="team-name">Racing Bulls</h3>
+                        <img src="https://media.formula1.com/content/dam/fom-website/teams/2025/racing-bulls-logo.png"
+                            alt="racing-bulls Logo" class="team-logo">
+                    </div>
+                    <div class="team-drivers">
+                        <span class="driver-name">Yuki Tsunoda</span>
+                        <span class="driver-separator">|</span>
+                        <span class="driver-name">Isack Hadjar</span>
+                    </div>
+                    <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/racing-bulls.png"
+                        alt="racing-bulls Car" class="team-car">
+                </div>
+            </div>
         </main>
 
         <footer class="text-white text-center py-4">
