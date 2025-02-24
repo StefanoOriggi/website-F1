@@ -30,7 +30,7 @@ async function fetchPlayerData() {
 
             const playerHtml = `
                 <h2>${player.strPlayer}</h2>
-
+                
                 <p style="font-weight: bold;">Team</p
                 <p id="squadra">${player.strTeam}</p>
 

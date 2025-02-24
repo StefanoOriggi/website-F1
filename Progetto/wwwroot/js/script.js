@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = document.getElementsByTagName("li").innerText;
     teams.forEach(team => {
         team.addEventListener("click", function () {
-            const url = this.getAttribute("data-url"); // Legge l'URL dal data attribute
+            const url = this.getAttribute("data-url");
             if (url) {
-                window.location.href = url; // Reindirizza alla pagina corrispondente
+                window.location.href = url;
             }
         });
     });

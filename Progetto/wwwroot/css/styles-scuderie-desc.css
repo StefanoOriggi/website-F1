@@ -1,0 +1,83 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F6F4F0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Centra verticalmente il contenuto */
+}
+.container {
+    background: white;
+    max-width: 1200px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.team-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    /* Larghezza del contenitore */
+    max-width: 1200px;
+    /* Larghezza massima */
+    margin: 80px auto 100px;
+    /* Margini per evitare sovrapposizioni con navbar e footer */
+    text-align: center;
+}
+
+.team-banner {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-height:200px;
+}
+
+.team-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Rimuove lo spazio sotto l'immagine */
+}
+.team-info {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.team-info h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #C70000;
+}
+
+.team-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.team-info p strong {
+    color: #C70000;
+    font-weight: bold;
+}
+
+.team-info a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.team-info a:hover {
+    text-decoration: underline;
+}

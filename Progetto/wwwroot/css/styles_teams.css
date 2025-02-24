@@ -10,6 +10,7 @@ body {
     z-index: 10;
     background-color: #C70000;
     padding: 1rem 0;
+
 }
 
 .navbar-brand img {
@@ -34,11 +35,16 @@ footer {
     padding: 1rem 0;
     z-index: 10;
 }
-
 .teams-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
 }
 
@@ -49,33 +55,32 @@ footer {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: calc(50% - 20px);
-    /* 2 div per riga */
     text-align: left;
-    /* Allinea tutto il contenuto a sinistra */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ccc
 }
 
-.team:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+ .team:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ .team:active {
+     transform: scale(0.98);
+     transition: transform 0.1s ease-in-out;
+ }
 
 .team-header {
     display: flex;
     justify-content: space-between;
-    /* Allinea il nome a sinistra e il logo a destra */
     align-items: center;
-    /* Centra verticalmente */
     margin-bottom: 10px;
 }
 
 .team-name {
     margin: 0;
-    /* Rimuovi il margine predefinito */
     font-size: 1.2em;
-    /* Aumenta leggermente la dimensione del font */
     font-weight: bold;
-    /* Rendi il nome più evidente */
 }
 
 .team-logo {
@@ -92,27 +97,19 @@ footer {
     margin: 10px 0;
     font-size: 0.9em;
     display: flex;
-    /* Usa Flexbox per dividere il contenuto */
     justify-content: space-between;
-    /* Distribuisce lo spazio tra gli elementi */
     align-items: center;
-    /* Centra verticalmente */
 }
 
 .driver-name {
     flex: 1;
-    /* Ogni nome occupa metà dello spazio disponibile */
     text-align: center;
-    /* Allinea il testo al centro della sua area */
 }
 
 .driver-separator {
     flex: 0;
-    /* La barra non si espande */
     padding: 0 10px;
-    /* Aggiunge spazio attorno alla barra */
 }
 .team-drivers span {
     display: inline-block;
-    /* Garantisce che i nomi siano sulla stessa linea */
 }
