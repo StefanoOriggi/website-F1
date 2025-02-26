@@ -95,13 +95,11 @@ body {
 
     .player-photo {
         height: auto;
-        /* Altezza automatica su dispositivi mobili */
     }
 
     .player-photo img {
         width: 100%;
         height: 300px;
-        /* Altezza fissa su dispositivi mobili */
     }
 
     .carousel img {

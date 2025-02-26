@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function redirectToTeamPage(teamId) {
     const apiUrl = `https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${teamId}`;
-    localStorage.setItem('teamApiUrl', apiUrl); // Salva l'URL dell'API nel localStorage
-    window.location.href = 'scuderie-click.html'; // Reindirizza alla pagina dei dettagli del team
+    localStorage.setItem('teamApiUrl', apiUrl);
+    window.location.href = 'scuderie-click.html';
 }
 
 async function fetchTeamData() {
-    const apiUrl = localStorage.getItem('teamApiUrl'); // Recupera l'URL dell'API dal localStorage
+    const apiUrl = localStorage.getItem('teamApiUrl');
 
     if (!apiUrl) {
         document.getElementById('team-data').innerHTML = "<p>Nessun dato trovato.</p>";
@@ -27,7 +27,7 @@ async function fetchTeamData() {
         const data = await response.json();
 
         if (data.teams && data.teams.length > 0) {
-            const team = data.teams[0]; // Prendi il primo team dalla risposta
+            const team = data.teams[0];
 
             const teamHtml = `
                 <div class="text-center">
