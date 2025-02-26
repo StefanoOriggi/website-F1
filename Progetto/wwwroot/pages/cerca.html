@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <script defer src="../js/script-fetch-cerca.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <style>
@@ -27,13 +27,13 @@
 
     .navbar-nav .nav-link {
         color: white;
-        margin: 0 15px;
+        margin: 0 10px;
         font-weight: bold;
-        transition: color 0.3s;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .navbar-nav .nav-link:hover {
-        color: #FFC107;
+        color: #F5F3EC;
     }
 
     footer {
@@ -43,6 +43,7 @@
         padding: 1rem 0;
         z-index: 10;
     }
+
     .filters-section {
         position: fixed;
         top: 70px;
@@ -112,7 +113,8 @@
             padding-top: 200px;
         }
     }
-     .loader {
+
+    .loader {
         border: 8px solid #f3f3f3;
         border-top: 8px solid #3498db;
         border-radius: 50%;
@@ -123,8 +125,13 @@
     }
 
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
     }
 </style>
 
