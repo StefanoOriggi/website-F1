@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const grandPrixSelect = document.getElementById('grandPrix');
     const searchForm = document.getElementById('searchForm');
     const resultsDiv = document.getElementById('results');
-    const loadingDiv = document.getElementById('loading'); // Elemento di caricamento
-
+    const loadingDiv = document.getElementById('loading');
     const grandPrixList = [
         "Bahrain Grand Prix",
         "Saudi Arabian Grand Prix",
@@ -42,9 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const grandPrix = grandPrixSelect.value;
 
         if (year && grandPrix) {
-            // Mostra l'icona di caricamento
             loadingDiv.style.display = 'block';
-            resultsDiv.innerHTML = ''; // Pulisci i risultati precedenti
+            resultsDiv.innerHTML = '';
 
             fetch(`https://www.thesportsdb.com/api/v1/json/3/eventsseason.php?id=4370&s=${year}`)
                 .then(response => response.json())
@@ -68,18 +66,17 @@ document.addEventListener('DOMContentLoaded', function () {
                                 resultsDiv.innerHTML = '<p>Errore nel caricamento dei risultati.</p>';
                             })
                             .finally(() => {
-                                // Nascondi l'icona di caricamento
                                 loadingDiv.style.display = 'none';
                             });
                     } else {
                         resultsDiv.innerHTML = '<p>Gran Premio non trovato per l\'anno selezionato.</p>';
-                        loadingDiv.style.display = 'none'; // Nascondi l'icona di caricamento
+                        loadingDiv.style.display = 'none';
                     }
                 })
                 .catch(error => {
                     console.error('Errore nel fetch degli eventi:', error);
                     resultsDiv.innerHTML = '<p>Errore nel caricamento degli eventi.</p>';
-                    loadingDiv.style.display = 'none'; // Nascondi l'icona di caricamento
+                    loadingDiv.style.display = 'none';
                 });
         } else {
             resultsDiv.innerHTML = '<p>Seleziona un anno e un Gran Premio.</p>';
