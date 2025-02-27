@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         "Saudi Arabian Grand Prix",
         "Australian Grand Prix",
         "Japanese Grand Prix",
-        "Chinese Grand Prix Sprint",
         "Chinese Grand Prix",
         "Miami Grand Prix",
         "Emilia Romagna Grand Prix",
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     grandPrixList.forEach(gp => {
-        const option = document.createElement('option');
+        const option = document.createElement('option'); 
         option.value = gp;
         option.textContent = gp;
         grandPrixSelect.appendChild(option);
@@ -84,13 +83,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function displayResults(top3) {
+        const orderedResults = [top3[1], top3[0], top3[2]];
+
         resultsDiv.innerHTML = `
-            <h3>Top 3 Piloti</h3>
-            <ul>
-                ${top3.map(pilot => `
-                    <li>${pilot.strPlayer} - ${pilot.intPosition}</li>
-                `).join('')}
-            </ul>
-        `;
+        <div class="podium">
+            ${orderedResults.map((pilot, index) => `
+                <div class="pilot-card">
+                    <h4>${pilot.strPlayer}</h4>
+                    <p>${pilot.intPosition}°</p>
+                </div>
+            `).join('')}
+        </div>
+    `;
     }
 });
