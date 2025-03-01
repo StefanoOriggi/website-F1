@@ -1,21 +1,18 @@
 using Progetto.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
+using FormulaApi.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
-
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
-
-builder.Services.AddOpenApiDocument(config =>
-    {
+builder.Services.AddOpenApiDocument(config => {
         config.Title = "Formula-API";
         config.DocumentName = "Formula-API";
         config.Version = "v1";
     }
 );
-if (builder.Environment.IsDevelopment())
-{
+if (builder.Environment.IsDevelopment()) {
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 }
 
@@ -29,34 +26,25 @@ builder.Services.AddDbContext<FormulaContext>(
     );
 
 var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
+if (app.Environment.IsDevelopment()) {
     app.MapOpenApi();
     app.UseOpenApi();
-    app.UseSwaggerUi(config =>
-    {
+    app.UseSwaggerUi(config => {
         config.DocumentTitle = "FormulaApi";
         config.Path = "/swagger";
         config.DocumentPath = "/swagger/{documentName}/swagger.json";
         config.DocExpansion = "list";
     });
 }
-
 app.UseHttpsRedirection();
-
-app.UseDefaultFiles(new DefaultFilesOptions
-{
+app.UseDefaultFiles(new DefaultFilesOptions {
     FileProvider = new PhysicalFileProvider(
         Path.Combine(builder.Environment.WebRootPath, "pages")
     ),
     RequestPath = ""
 });
-
 app.UseStaticFiles();
-
-app.UseStaticFiles(new StaticFileOptions
-{
+app.UseStaticFiles(new StaticFileOptions {
     FileProvider = new PhysicalFileProvider(
         Path.Combine(builder.Environment.WebRootPath, "pages")
     )
@@ -65,5 +53,6 @@ app.MapGet("/", () =>
 {
     return Results.Redirect("homepage.html");
 });
-
+app.MapPlayerEndpoints();
+app.MapTeamsEndpoints();
 app.Run();
